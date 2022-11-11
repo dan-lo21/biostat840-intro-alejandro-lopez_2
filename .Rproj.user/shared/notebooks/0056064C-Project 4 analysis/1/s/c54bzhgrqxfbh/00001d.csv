@@ -1,0 +1,2 @@
+"0","colnames(themes) <- c('theme_id', 'theme_name', 'parent_id')"
+"0","themes <- themes %>% select('theme_id', 'theme_name')"

@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Alejandro Lopez"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - analysis.qmd
+      - bibliography.bib
+
+format:
+  html:
+    theme: minty
+    css: styles.css
+    toc: true
+
+editor: visual
+
+execute: 
+  freeze: auto

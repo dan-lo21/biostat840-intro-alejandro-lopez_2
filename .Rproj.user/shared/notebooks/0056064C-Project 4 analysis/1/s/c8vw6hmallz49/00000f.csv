@@ -1,0 +1,7 @@
+"0","for(x in most_popular_pieces){"
+"0","  for(y in 1997:2022){"
+"0","    if(nrow(filter(top, theme_name==x, year==y)) == 0){"
+"0","      top <- top %>% add_row(theme_name=x, year=y, sum=0, n=0)"
+"0","    }"
+"0","  }"
+"0","}"

@@ -1,0 +1,3 @@
+"0","top <- with_theme %>% filter(theme_name %in% most_popular_pieces) %>% select(set_num, year, num_parts, theme_name) %>% filter(num_parts > 10) %>% group_by(theme_name, year) %>% summarize(sum = sum(num_parts), n=n()) %>% filter(year >= 1997) %>% ungroup()"
+"2","`summarise()` has grouped output by 'theme_name'. You can override using the `.groups` argument."
+"0","top"

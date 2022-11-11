@@ -1,0 +1,1 @@
+"0","with_theme %>% filter(year >= 1997, num_parts > 10) %>% group_by(year) %>% summarize(n = n()) %>% ggplot(aes(year, n)) + geom_line()"

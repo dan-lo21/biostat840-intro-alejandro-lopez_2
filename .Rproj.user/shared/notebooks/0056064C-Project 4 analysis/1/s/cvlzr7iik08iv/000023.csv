@@ -1,0 +1,1 @@
+"0","with_theme %>% filter(year >= 1997, num_parts > 10) %>% group_by(year) %>% summarize(avg = mean(num_parts)) %>% ggplot(aes(year, avg)) + geom_line()"

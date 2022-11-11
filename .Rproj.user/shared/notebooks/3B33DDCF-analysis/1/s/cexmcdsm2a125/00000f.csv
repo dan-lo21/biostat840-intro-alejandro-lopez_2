@@ -1,0 +1,4 @@
+"0","with_theme %>% filter(num_parts > 10, theme_name %in% c('Friends', 'Harry Potter', 'LEGO Ideas and CUUSOO')) %>% ggplot(aes(x=theme_name, y=num_parts)) + coord_flip() + geom_boxplot()"
+"2","Error in with_theme %>% filter(num_parts > 10, theme_name %in% c(""Friends"",  : 
+  could not find function ""%>%""
+"

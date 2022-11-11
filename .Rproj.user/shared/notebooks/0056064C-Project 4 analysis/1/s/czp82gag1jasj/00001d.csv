@@ -1,0 +1,1 @@
+"0","lego_ideas %>% mutate(year=factor(year)) %>% ggplot(aes(year)) + geom_bar() "

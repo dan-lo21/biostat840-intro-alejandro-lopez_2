@@ -1,0 +1,2 @@
+"0","#| column: margin"
+"0","knitr::kable(tibble('theme'=c('LEGO Ideas', 'Harry Potter', 'Friends'), 'min'=c(lego_min, harry_min, friends_min), 'max'=c(lego_max, harry_max, friends_max), 'avg'=c(lego_mean, harry_mean, friends_mean)))"

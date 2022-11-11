@@ -1,0 +1,2 @@
+"0","ranked <- inner_join(most_pieces, most_sets, 'ranking') %>% select('ranking', 'theme_name.x', 'theme_name.y') %>% setnames(new=c('ranking', 'theme_name_pieces', 'theme_name_sets'), old=c('ranking', 'theme_name.x', 'theme_name.y'))"
+"0","ranked"

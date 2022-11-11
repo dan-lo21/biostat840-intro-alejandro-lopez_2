@@ -1,0 +1,2 @@
+"0","most_pieces <- with_theme %>% filter(year >= 1997, num_parts > 10) %>% group_by(theme_name) %>% summarize(sum=sum(num_parts)) %>% arrange(-sum) %>% head(12)"
+"0","most_pieces"

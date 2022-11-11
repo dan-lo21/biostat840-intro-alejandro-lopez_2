@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Alejandro Lopez - Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Alejandro Lopez</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About Me</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./analysis.html" aria-current="page">Analysis</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="./bibliography.bib">
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Analysis</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Lego sets all come with different themes. Each theme serves the purpose of being created to entertain a specific audience. The purpose of this analysis is to look at the difference in Lego set sizes, quantified by the number of Lego “bricks”, or pieces, according to the theme. This can give us a deeper insight into how Lego produces their sets, who their inteded audience is, and how many sets of that specific theme are produces. With this analysis, I aim to answer the question; Does a Lego theme affect a set’s size?</p>
+<p>The intended audience for this data analysis are all Lego enthusiasts, and those interested in learning about the way that the Lego company thinks about the size of their sets depending on the theme. The original data came from the tidytuesday library, and it was published on September 6, 2022 (https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-09-06)<span class="citation" data-cites="tidytuesday">(<a href="#ref-tidytuesday" role="doc-biblioref">Mock 2022</a>)</span>. Tidytuesday is a wonderful data source which allows users to practice their data science skils <span class="citation" data-cites="shrestha2021remote">(<a href="#ref-shrestha2021remote" role="doc-biblioref">Shrestha, Barik, and Parnin 2021</a>)</span>. The data dictionary is included in the github repository linked above.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /Users/dlopez31/Desktop/biostat840-intro-alejandro-lopez</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'data.table'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:dplyr':
+
+    between, first, last</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sets <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-09-06/sets.csv.gz'</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>themes <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-09-06/themes.csv.gz'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(sets, <span class="at">file =</span> <span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"sets.RDS"</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(themes, <span class="at">file =</span> <span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"themes.RDS"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>First, we are interested in joining the “sets” dataset containing all Lego sets created since 1965, with the “themes” dataset, containing the themes associated with the Lego sets.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sets <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"sets.RDS"</span>))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>themes <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"themes.RDS"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sets <span class="ot">&lt;-</span> sets <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="st">'set_num'</span>, <span class="st">'name'</span>, <span class="st">'year'</span>, <span class="st">'theme_id'</span>, <span class="st">'num_parts'</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(themes) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'theme_id'</span>, <span class="st">'theme_name'</span>, <span class="st">'parent_id'</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>themes <span class="ot">&lt;-</span> themes <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="st">'theme_id'</span>, <span class="st">'theme_name'</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>with_theme <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(sets, themes, <span class="at">by=</span><span class="st">'theme_id'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now our “with_theme” dataset contains the sets with the appropriate themes.</p>
+<p>First, we are going to try to examine the relationship between the number of sets that is produced per theme and the number of pieces total that each theme has. This can give us an insight into whether specific theme production is focused on the number of sets or size of the set. We will obtain the top 12 and compare them. We will only focus on the last 25 years.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>most_pieces <span class="ot">&lt;-</span> with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1997</span>, num_parts <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(theme_name) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">sum=</span><span class="fu">sum</span>(num_parts)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="sc">-</span>sum) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">12</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>most_pieces</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 2
+   theme_name                   sum
+   &lt;chr&gt;                      &lt;dbl&gt;
+ 1 Star Wars                 230167
+ 2 Technic                   205635
+ 3 Ninjago                   101324
+ 4 Friends                   101174
+ 5 Ultimate Collector Series  92432
+ 6 Creator Expert             79053
+ 7 Icons                      71578
+ 8 Harry Potter               68250
+ 9 Creator 3-in-1             68069
+10 LEGO Ideas and CUUSOO      57549
+11 City                       48112
+12 LEGO Art                   48067</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>most_popular_pieces <span class="ot">&lt;-</span> <span class="fu">unlist</span>(most_pieces[[<span class="st">'theme_name'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>most_sets <span class="ot">&lt;-</span> with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year<span class="sc">&gt;=</span><span class="dv">1997</span>, num_parts <span class="sc">&gt;</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(theme_name) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">n=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="sc">-</span>n) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">12</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>most_sets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 2
+   theme_name         n
+   &lt;chr&gt;          &lt;int&gt;
+ 1 Star Wars        734
+ 2 Friends          487
+ 3 Technic          471
+ 4 Ninjago          359
+ 5 Bionicle         320
+ 6 Gear             248
+ 7 Basic Set        196
+ 8 Creator 3-in-1   193
+ 9 City             192
+10 Creator          186
+11 Racers           183
+12 Town             167</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">12</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>most_pieces<span class="sc">$</span>ranking <span class="ot">&lt;-</span> x </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>most_sets<span class="sc">$</span>ranking <span class="ot">&lt;-</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ranked <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(most_pieces, most_sets, <span class="st">'ranking'</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="st">'ranking'</span>, <span class="st">'theme_name.x'</span>, <span class="st">'theme_name.y'</span>) <span class="sc">%&gt;%</span> <span class="fu">setnames</span>(<span class="at">new=</span><span class="fu">c</span>(<span class="st">'ranking'</span>, <span class="st">'theme_name_pieces'</span>, <span class="st">'theme_name_sets'</span>), <span class="at">old=</span><span class="fu">c</span>(<span class="st">'ranking'</span>, <span class="st">'theme_name.x'</span>, <span class="st">'theme_name.y'</span>))</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>ranked</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 3
+   ranking theme_name_pieces         theme_name_sets
+     &lt;int&gt; &lt;chr&gt;                     &lt;chr&gt;          
+ 1       1 Star Wars                 Star Wars      
+ 2       2 Technic                   Friends        
+ 3       3 Ninjago                   Technic        
+ 4       4 Friends                   Ninjago        
+ 5       5 Ultimate Collector Series Bionicle       
+ 6       6 Creator Expert            Gear           
+ 7       7 Icons                     Basic Set      
+ 8       8 Harry Potter              Creator 3-in-1 
+ 9       9 Creator 3-in-1            City           
+10      10 LEGO Ideas and CUUSOO     Creator        
+11      11 City                      Racers         
+12      12 LEGO Art                  Town           </code></pre>
+</div>
+</div>
+<p>We see from the table above that Star Wars reigns supreme, with both the highest number of pieces and also the most number of sets produced. We can also see that there are some differences in the sets included in each list. A couple that I would like to point out that we will come back to later are the Harry Potter sets, only included in the list with the most number of pieces and the LEGO Ideas and CUUSOO set, also only included in the the list with the most number of pieces.</p>
+<p>We will analyse how some of these numbers have changed over the years. On the graphs below, we see that the both the average number of pieces per set, as well as the total number of sets produced have increased in the last 25 years. The package ggplot2 was used for these visualizations <span class="citation" data-cites="wickham2016package">(<a href="#ref-wickham2016package" role="doc-biblioref">Wickham, Chang, and Wickham 2016</a>)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1997</span>, num_parts <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">avg =</span> <span class="fu">mean</span>(num_parts)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, avg)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Year'</span>, <span class="at">y=</span><span class="st">'Average Number of Pieces'</span>, <span class="at">title=</span><span class="st">'Average Number of Pieces in Last 25 Years'</span>, <span class="at">subtitle=</span><span class="st">"Average number of pieces has increased in the last 25 years."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="analysis_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1997</span>, num_parts <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, n)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Year'</span>, <span class="at">y=</span><span class="st">'Number of Sets'</span>, <span class="at">title=</span><span class="st">'Number of Sets in Last 25 Years'</span>, <span class="at">subtitle=</span><span class="st">"Number of sets has increased in the last 25 years."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="analysis_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Using the list of themes that have the most number of pieces, now we will analyze how the number of pieces has changed over the years for each theme. We will also look at how the number of total sets produced per theme has varied. We will focus on the last 25 years only.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>top <span class="ot">&lt;-</span> with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(theme_name <span class="sc">%in%</span> most_popular_pieces) <span class="sc">%&gt;%</span> <span class="fu">select</span>(set_num, year, num_parts, theme_name) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(num_parts <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(theme_name, year) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">sum =</span> <span class="fu">sum</span>(num_parts), <span class="at">n=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1997</span>) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'theme_name'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>top_no_zero <span class="ot">&lt;-</span> top</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>top</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 183 × 4
+   theme_name  year   sum     n
+   &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
+ 1 City        2005   314     2
+ 2 City        2006   688     3
+ 3 City        2007   234     1
+ 4 City        2008   197     1
+ 5 City        2009   599     4
+ 6 City        2010   656     2
+ 7 City        2011  1198     6
+ 8 City        2012   248     1
+ 9 City        2013  1188     5
+10 City        2014  1360     8
+# … with 173 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> most_popular_pieces){</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(y <span class="cf">in</span> <span class="dv">1997</span><span class="sc">:</span><span class="dv">2022</span>){</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">nrow</span>(<span class="fu">filter</span>(top, theme_name<span class="sc">==</span>x, year<span class="sc">==</span>y)) <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>      top <span class="ot">&lt;-</span> top <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(<span class="at">theme_name=</span>x, <span class="at">year=</span>y, <span class="at">sum=</span><span class="dv">0</span>, <span class="at">n=</span><span class="dv">0</span>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>top <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, sum)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="st">'theme_name'</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Year'</span>, <span class="at">y=</span><span class="st">'Total Number of Pieces'</span>, <span class="at">title=</span><span class="st">'Total Number of Pieces per Theme in the Last 25 Years'</span>, <span class="at">subtitle=</span><span class="st">"Number of pieces has increased in the last 25 years for most themes."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="analysis_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>top <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, n)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="st">'theme_name'</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Year'</span>, <span class="at">y=</span><span class="st">'Total Number of Sets'</span>, <span class="at">title=</span><span class="st">'Total Number of Sets per Theme in the Last 25 Years'</span>, <span class="at">subtitle=</span><span class="st">"Number of sets has increased in the last 25 years for a lot of themes, but many themes did not."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="analysis_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>On the graphs above, we see how the number of pieces per theme has changed in graph 1, as well as how the number of sets produced per theme has changed in graph 2, both over the last 25 years. In graph 1, We see in general that the total number of pieces per year has increased per theme. In graph 2, we see that some themes have largely increased the number of sets made, we see this for “Friends”, “City”, “Star Wars”, “Ninjago” and “Harry Potter”. On the other hand, “LEGO Ideas and CUUSOO” has increased, but the number of sets produced per year is still very low. This is in contrast to its number of pieces, which seems to have increased to upwards of 10000 by 2021.</p>
+<p>In the plot below, we examine the distribution of the total number of sets produced per theme. We see that these themes all have varying distributions. The mean number of sets produced per theme ranges from 1 to upwards of 40. The “Friends” theme has the highest average number of sets made and it was also in the top for the most number of total pieces.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>top_no_zero <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(theme_name, n)) <span class="sc">+</span> <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Number of Sets'</span>, <span class="at">y=</span><span class="st">'Theme Name'</span>, <span class="at">title=</span><span class="st">'Distribution of number of Lego sets per theme'</span>, <span class="at">subtitle=</span><span class="st">"Distributions of Lego sets vary widely by theme. Some have an average </span><span class="sc">\n</span><span class="st">number of sets upwards of 40, while the majority has an average number </span><span class="sc">\n</span><span class="st">of sets below 15."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="analysis_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We will now focus on three specific themes, the “Friends” theme, which has a large number of sets produced, as well as pieces, along with “Harry Potter”, a very iconic theme, which was in the list for highest number of pieces, but not for highest number of sets produced, and on “LEGO Ideas and CUUSOO” which was also in the list for highest number of pieces, but lagged behind on the number of sets produced.</p>
+<p>First, we look at the number of sets produced every year for those three themes. We see that “Friends” is the highest, even though it only started in 2012. “Harry Potter” did not make any sets from 2012-2017. This is probably because the last entry in the movie franchise premiered in 2011 and the Lego sets only got revitalized for the 20th anniversary of the first book coming out. “LEGO Ideas and CUUSOO” has been slowly increasing since it started in 2011.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>harry_potter <span class="ot">&lt;-</span> with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(theme_name <span class="sc">==</span> <span class="st">'Harry Potter'</span>, num_parts <span class="sc">&gt;</span> <span class="dv">10</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>lego_ideas <span class="ot">&lt;-</span> with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(theme_name <span class="sc">==</span> <span class="st">'LEGO Ideas and CUUSOO'</span>, num_parts <span class="sc">&gt;</span> <span class="dv">10</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>friends <span class="ot">&lt;-</span> with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(theme_name <span class="sc">==</span> <span class="st">'Friends'</span>, num_parts <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>sets_of_interest <span class="ot">&lt;-</span> <span class="fu">rbind</span>(harry_potter, lego_ideas, friends)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>sets_of_interest <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">fill=</span>theme_name)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Year'</span>, <span class="at">y=</span><span class="st">'Number of Sets'</span>, <span class="at">title=</span><span class="st">'Number of Sets for Select Themes in the Last 25 Years'</span>, <span class="at">subtitle=</span><span class="st">"Friends has the highest number of sets produced per year. Harry Potter was the first theme to </span><span class="sc">\n</span><span class="st">start in 2001, but had a dry spell in the late 2000's."</span>) <span class="sc">+</span> <span class="fu">guides</span>(<span class="at">fill=</span><span class="fu">guide_legend</span>(<span class="at">title=</span><span class="st">"Theme Name"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="analysis_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>friends_mean <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">mean</span>(friends<span class="sc">$</span>num_parts))</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>friends_max <span class="ot">&lt;-</span> <span class="fu">max</span>(friends<span class="sc">$</span>num_parts)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>friends_min <span class="ot">&lt;-</span> <span class="fu">min</span>(friends<span class="sc">$</span>num_parts)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>harry_mean <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">mean</span>(harry_potter<span class="sc">$</span>num_parts))</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>harry_min <span class="ot">&lt;-</span> <span class="fu">min</span>(harry_potter<span class="sc">$</span>num_parts)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>harry_max <span class="ot">&lt;-</span> <span class="fu">max</span>(harry_potter<span class="sc">$</span>num_parts)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>lego_mean <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">mean</span>(lego_ideas<span class="sc">$</span>num_parts))</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>lego_max <span class="ot">&lt;-</span> <span class="fu">max</span>(lego_ideas<span class="sc">$</span>num_parts)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>lego_min <span class="ot">&lt;-</span> <span class="fu">min</span>(lego_ideas<span class="sc">$</span>num_parts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the graphs below, we see the distribution for the number of pieces for the three themes we had chosen. We see that “Friends” has the lowest distribution, followed by “Harry Potter”, which also has some outliers, and finally, “LEGO Ideas and CUUSOO”, with the highest distribution.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">tibble</span>(<span class="st">'theme'</span><span class="ot">=</span><span class="fu">c</span>(<span class="st">'LEGO Ideas'</span>, <span class="st">'Harry Potter'</span>, <span class="st">'Friends'</span>), <span class="st">'min'</span><span class="ot">=</span><span class="fu">c</span>(lego_min, harry_min, friends_min), <span class="st">'max'</span><span class="ot">=</span><span class="fu">c</span>(lego_max, harry_max, friends_max), <span class="st">'avg'</span><span class="ot">=</span><span class="fu">c</span>(lego_mean, harry_mean, friends_mean)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">theme</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: right;">avg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">LEGO Ideas</td>
+<td style="text-align: right;">154</td>
+<td style="text-align: right;">3955</td>
+<td style="text-align: right;">1151</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Harry Potter</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">6020</td>
+<td style="text-align: right;">529</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Friends</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1682</td>
+<td style="text-align: right;">207</td>
+</tr>
+</tbody>
+</table>
+</div></div></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(num_parts <span class="sc">&gt;</span> <span class="dv">10</span>, theme_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Friends'</span>, <span class="st">'Harry Potter'</span>, <span class="st">'LEGO Ideas and CUUSOO'</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>theme_name, <span class="at">y=</span>num_parts)) <span class="sc">+</span> <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Number of Parts per Set'</span>, <span class="at">y=</span><span class="st">'Theme Name'</span>, <span class="at">title=</span><span class="st">'Distribution of Number of Parts per Set for Select Themes'</span>, <span class="at">subtitle=</span><span class="st">"Friends has most narrow distribution, followed by Harry Potter. Harry Potter </span><span class="sc">\n</span><span class="st">has very large outliers."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="analysis_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We can also see from the table below that the min for “LEGO Ideas and CUUSOO” is magnitudes higher than the other mins. The average for “LEGO Ideas and CUUSOO” is also higher than the others.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The max is the highest for “Harry Potter”, with a whopping 6020 pieces per set and a retail price of $469.99.</p>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>top_legos_harry <span class="ot">&lt;-</span> with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(theme_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Harry Potter'</span>)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="sc">-</span>num_parts) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">'name'</span>, <span class="st">'num_parts'</span>))</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(top_legos_harry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: right;">num_parts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hogwarts Castle</td>
+<td style="text-align: right;">6020</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Diagon Alley</td>
+<td style="text-align: right;">5548</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hogwarts Express - Collectors’ Edition</td>
+<td style="text-align: right;">5150</td>
+</tr>
+</tbody>
+</table>
+</div></div></div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>top_legos_ideas <span class="ot">&lt;-</span> with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(theme_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'LEGO Ideas and CUUSOO'</span>)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="sc">-</span>num_parts) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">'name'</span>, <span class="st">'num_parts'</span>))</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(top_legos_ideas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: right;">num_parts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Home Alone</td>
+<td style="text-align: right;">3955</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Grand Piano</td>
+<td style="text-align: right;">3662</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tree House</td>
+<td style="text-align: right;">3037</td>
+</tr>
+</tbody>
+</table>
+</div></div></div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>top_legos_friends <span class="ot">&lt;-</span> with_theme <span class="sc">%&gt;%</span> <span class="fu">filter</span>(theme_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Friends'</span>)) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="sc">-</span>num_parts) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">'name'</span>, <span class="st">'num_parts'</span>))</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(top_legos_friends)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: right;">num_parts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Main Street Building</td>
+<td style="text-align: right;">1682</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Heartlake Grand Hotel</td>
+<td style="text-align: right;">1572</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Heartlake City Grand Hotel</td>
+<td style="text-align: right;">1309</td>
+</tr>
+</tbody>
+</table>
+</div></div></div>
+<p>From the analysis of this LEGO dataset, we can get a sense of how Lego chooses what sizes the sets for each theme get. The them “LEGO Ideas and CUUSOO” is a theme made up mostly of collectible sets, sets which are for decoration and not really used to play with. This theme is marketed as being for “experienced users” or adults. The sets with the most number of pieces for this theme are a replica of the Home Alone house, a replica of a grand piano, and a tree house. These are all collectible, with only a small number of minifigures or no minifigures at all.</p>
+<p>The same can be said for “Harry Potter”, as their sets with the most number of pieces are collectibles. They are the Hogwarts castle, Diagon Alley, and the Hogwarts Express, all very iconic landmarks of the movies. These are not playable sets, and are meant to be displays or collectibles. The difference is that “Harry Potter” also contains sets with small numbers of pieces, which can be used for playing.</p>
+<p>The “Friends” theme is marketed for kids, specifically young girls.These sets are meant to be played with, which explains why so many sets are made and why that theme has so many pieces. This themes is also meant to fill a vacuum, as before, there really weren’t any Lego themes that were specifically targeted for young girls. If a girl wanted to play with Legos, she would have to choose a set that would typically be associated with boys like those of “City” which usually have firefighters, cops, astronauts, etc. This idea worked out for the company, as the theme has only been out for roughly 11 years, but it is in the top number of sets made and also total number of pieces.</p>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Things to keep in mind regarding the analysis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If there was data with the sales price for each set, we would be able to get a lot more information on how exactly it is that the Lego company chooses what sets are made and how big they are. There are many other factors that contribute to how many pieces each set has and how many sets are made per theme, such as minifigure inclusion, rarity of pieces, etc.</p>
+</div>
+</div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="diagon_alley.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Diagon Alley</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="castle.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Hogwarts Castle</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="grand_piano.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Grand Piano</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="hogwarts_express.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Hogwarts Express</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="home_alone.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Home Alone</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="main_street_building.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Main Street Building</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="heartlake_hotel.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Heartlake Grand Hotel</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-tidytuesday" class="csl-entry" role="doc-biblioentry">
+Mock, Thomas. 2022. <span>“Tidy Tuesday: A Weekly Data Project Aimed at the r Ecosystem.”</span> <a href="https://github.com/rfordatascience/tidytuesday">https://github.com/rfordatascience/tidytuesday</a>.
+</div>
+<div id="ref-shrestha2021remote" class="csl-entry" role="doc-biblioentry">
+Shrestha, Nischal, Titus Barik, and Chris Parnin. 2021. <span>“Remote, but Connected: How# TidyTuesday Provides an Online Community of Practice for Data Scientists.”</span> <em>Proceedings of the ACM on Human-Computer Interaction</em> 5 (CSCW1): 1–31.
+</div>
+<div id="ref-wickham2016package" class="csl-entry" role="doc-biblioentry">
+Wickham, Hadley, Winston Chang, and Maintainer Hadley Wickham. 2016. <span>“Package <span>‘Ggplot2’</span>.”</span> <em>Create Elegant Data Visualisations Using the Grammar of Graphics. Version</em> 2 (1): 1–189.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

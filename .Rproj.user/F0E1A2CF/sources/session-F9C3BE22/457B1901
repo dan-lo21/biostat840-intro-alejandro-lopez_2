@@ -1,0 +1,33 @@
+{
+    "id": "457B1901",
+    "path": "~/Desktop/biostat840-intro-alejandro-lopez/analysis.qmd",
+    "project_path": "analysis.qmd",
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1668113702625.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "cursorPosition": "75,309",
+        "scrollLine": "0",
+        "rmdVisualModeLocation": "6810:3651",
+        "docOutlineSize": "136"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1668196146,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1668196146583,
+    "read_only": false,
+    "read_only_alternatives": []
+}

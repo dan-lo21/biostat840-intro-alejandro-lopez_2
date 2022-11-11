@@ -1,0 +1,1 @@
+"0","lego_ideas %>% filter(num_parts > 10) %>% arrange(-num_parts) %>% head(3)"

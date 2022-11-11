@@ -1,0 +1,5 @@
+"0","#| column: margin"
+"0","top_legos_friends <- with_theme %>% filter(theme_name %in% c('Friends')) %>% arrange(-num_parts) %>% head(3) %>% select(c('name', 'num_parts'))"
+"2","Error in with_theme %>% filter(theme_name %in% c(""Friends"")) %>% arrange(-num_parts) %>%  : 
+  could not find function ""%>%""
+"

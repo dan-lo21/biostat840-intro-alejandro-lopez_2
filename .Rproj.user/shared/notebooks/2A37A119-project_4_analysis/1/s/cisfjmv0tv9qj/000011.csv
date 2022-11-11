@@ -1,0 +1,1 @@
+"0","leg_with_price <- lego_with_price %>% select('Item_Number', 'Name', 'Year', 'Theme', 'Subtheme', 'Pieces', 'Minifigures', 'USD_MSRP')"

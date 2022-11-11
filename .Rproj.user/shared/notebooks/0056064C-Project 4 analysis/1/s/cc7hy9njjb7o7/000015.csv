@@ -1,0 +1,3 @@
+"0","x <- seq(1, 12)"
+"0","most_pieces$ranking <- x "
+"0","most_sets$ranking <- x"
